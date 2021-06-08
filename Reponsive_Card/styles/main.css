@@ -1,0 +1,124 @@
+html {
+  font-family: "Montserrat", sans-serif;
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  background-color: #0b0c10;
+  color: #66fcf1;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: #c5c6c7;
+  color: #45a29e;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap; /* Responsive content */
+  max-width: 1100px;
+  border: 2px solid rgb(82, 80, 80);
+  background-color: #1f2833;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .html {
+    display: none;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*Card hover */
+/* Card_1 */
+.card-1:hover {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.card-1:hover p {
+  color: white;
+}
+
+.card-1:hover a {
+  background-color: white;
+  color: #1da1f2;
+}
+/* Card_2 */
+.card-2:hover {
+  background-color: #e1306c;
+  color: white;
+}
+
+.card-2:hover p {
+  color: white;
+}
+
+.card-2:hover a {
+  background-color: white;
+  color: #e1306c;
+}
+/* Card_3 */
+.card-3:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+.card-3:hover p {
+  color: white;
+}
+
+.card-3:hover a {
+  background-color: white;
+  color: #ff0000;
+}
+
+/* Logo */
+.card .fab {
+  font-size: 70px;
+  margin: 15px 0;
+}
+
+.card > * {
+  flex: 1 1 100%;
+}
+
+/* Heading */
+h1 {
+  margin: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Paragraph */
+.container p {
+  color: #c5c6c7;
+}
+
+/* Button */
+.card a {
+  background-color: #45a29e;
+  color: #c5c6c7;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px;
+  margin: 22px 0;
+  border: 1px solid rgb(82, 80, 80);
+  border-radius: 20px;
+}
