@@ -1,0 +1,50 @@
+:root {
+  --lw-font-size: 16px;
+  --lw-padding: 20px;
+  --lw-margin: 20px;
+}
+
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-item {
+  position: relative;
+  padding: var(--lw-padding);
+
+  border: 1px solid rgb(8, 124, 124);
+  border-radius: 5px;
+  font-size: 1.4rem;
+  background-color: aqua;
+}
+
+.grid-item::before {
+  content: "Item";
+}
+.grid-item::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.item-1::after {
+  content: "1";
+}
+.item-2::after {
+  content: "2";
+}
+.item-3::after {
+  content: "3";
+}
+.item-4::after {
+  content: "4";
+}
+.item-5::after {
+  content: "5";
+}
+.item-6::after {
+  content: "6";
+}
