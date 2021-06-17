@@ -8,6 +8,7 @@
     "navbar navbar navbar"
     "main . sidebar"
     "content1 content2 content2";
+  place-items: center end;
 }
 
 .item-1 {
