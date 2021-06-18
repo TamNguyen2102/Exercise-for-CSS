@@ -1,0 +1,64 @@
+.container {
+  border: 10px solid yellow;
+
+  margin: 20px;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.container::after {
+  content: "Hover me";
+  background-color: rgb(116, 112, 112);
+  color: rgb(213, 218, 218);
+  font-weight: 700;
+  font-size: 20px;
+
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  right: -100%;
+  top: 50%;
+
+  font-size: 5vh;
+}
+
+.container1::before {
+  content: "Content-box";
+}
+.container2::before {
+  content: "Border-box";
+}
+
+.container1:hover::after {
+  box-sizing: border-box;
+  padding: 5px;
+  content: "Gives you the default CSS box-sizing behavior. If you set an element's width to 100 pixels, then the element's content box will be 100 pixels wide, and the width of any border or padding will be added to the final rendered width, making the element wider than 100px.";
+}
+.container2:hover::after {
+  box-sizing: border-box;
+  padding: 5px;
+  content: "Border-box tells the browser to account for any border and padding in the values you specify for an element's width and height. If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added, and the content box will shrink to absorb that extra width.";
+}
+
+.child_container1 {
+  box-sizing: content-box;
+  width: 100%;
+  border: 10px solid #cc1818;
+  padding: 5px;
+}
+.child_container2 {
+  box-sizing: border-box;
+  width: 100%;
+  border: 10px solid #5b6dcd;
+  padding: 5px;
+}
