@@ -28,8 +28,12 @@
   position: absolute;
   right: -100%;
   top: 50%;
-
   font-size: 5vh;
+}
+
+.container1::after,
+.container2::after {
+  transition: 0.5s;
 }
 
 .container1::before {
