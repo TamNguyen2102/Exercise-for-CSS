@@ -1,0 +1,80 @@
+:root {
+  --background-color: #e3e3e3;
+  --border-side: 4px;
+  --accent-color: #0af;
+}
+body {
+  width: 100%;
+  max-width: 1400px;
+  height: 90vh;
+
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn {
+  background-color: var(--background-color);
+  color: #222;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.75rem 1rem;
+  position: relative;
+}
+
+/* Border Bop */
+.btn-border-bop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border: var(--border-side) solid var(--accent-color);
+
+  transition: top, left, right, bottom, 100ms ease-in;
+}
+
+.btn-border-bop:hover::before,
+.btn-border-bop:focus::before {
+  top: calc(
+    var(--border-side) * -2
+  ); /* Make the position of the border twice as origin */
+  left: calc(var(--border-side) * -2);
+  right: calc(var(--border-side) * -2);
+  bottom: calc(var(--border-side) * -2);
+}
+
+/* Button background slide */
+
+.btn.btn-background-slide {
+  z-index: 1;
+}
+
+.btn.btn-background-slide::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  background-color: var(--accent-color);
+
+  transform: scaleX(0);
+  transition: transform 200ms ease-in-out;
+  transform-origin: left; /* The animation start from */
+}
+
+.btn.btn-background-slide:hover::before,
+.btn.btn-background-slide:focus::before {
+  transform: scaleX(1);
+}
