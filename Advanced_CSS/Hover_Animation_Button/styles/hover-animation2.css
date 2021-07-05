@@ -1,0 +1,85 @@
+.section-2 {
+  margin-left: 50px;
+
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.effect {
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0.75rem 1.5rem;
+}
+
+/* --- Effect one --- */
+.effect-1 {
+  background-color: none;
+  position: relative;
+}
+.effect-1::after,
+.effect-1::before {
+  content: "";
+  width: 20%;
+  height: 20%;
+
+  display: block;
+  position: absolute;
+  border: 2px solid;
+  border-radius: 2px;
+  transition: width, height, 400ms ease-in-out;
+}
+.effect-1::after {
+  right: 0;
+  bottom: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: blue;
+  border-bottom-color: blue;
+}
+.effect-1::before {
+  left: 0;
+  top: 0;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: blue;
+  border-left-color: blue;
+}
+
+.effect-1:hover::after,
+.effect-1:hover::before {
+  height: 100%;
+  width: 100%;
+}
+
+/*--- Effect-two --- */
+.effect-2 {
+  position: relative;
+}
+.effect-2::after,
+.effect-2::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: blue;
+
+  transition: all 300ms ease;
+}
+
+.effect-2:hover::before {
+  top: 0;
+  transform: scale(1);
+}
+.effect-2:hover::after {
+  transform: scale(1);
+}
