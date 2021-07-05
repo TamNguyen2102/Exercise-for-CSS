@@ -1,0 +1,139 @@
+.section-1 {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.btn {
+  background-color: var(--background-color);
+  color: #222;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.75rem 1rem;
+  position: relative;
+}
+
+/* Border Bop */
+.btn.btn-border-bop {
+  z-index: 1;
+}
+.btn-border-bop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  border: var(--border-side) solid var(--background-color);
+  z-index: -1;
+  transition: top, left, right, bottom, 100ms ease-in;
+}
+
+.btn-border-bop:hover::before,
+.btn-border-bop:focus::before {
+  top: calc(
+    var(--border-side) * -2
+  ); /* Make the position of the border twice as origin */
+  left: calc(var(--border-side) * -2);
+  right: calc(var(--border-side) * -2);
+  bottom: calc(var(--border-side) * -2);
+  border-color: var(--accent-color);
+}
+
+/* ---Button background slide--- */
+
+.btn.btn-background-slide {
+  z-index: 1;
+  transition: color 300ms ease-in-out;
+}
+
+.btn.btn-background-slide::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  background-color: var(--accent-color);
+
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+  transform-origin: left; /* The animation start from */
+}
+
+.btn.btn-background-slide:hover::before,
+.btn.btn-background-slide:focus::before {
+  transform: scaleX(1);
+}
+
+/* Color text when hover and focus */
+.btn.btn-background-slide:hover,
+.btn.btn-background-slide:focus {
+  color: white;
+}
+
+/* ==== Background Circle Button ==== */
+.btn.btn.btn-background-circle {
+  background-color: var(--accent-color);
+
+  z-index: 1;
+  overflow: hidden;
+
+  transition: color 300ms ease-in-out;
+}
+.btn.btn-background-circle::before {
+  content: "";
+  background-color: var(--background-color);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  border-radius: 50%;
+  transition: transform 300ms ease-in-out;
+  transform: scale(1.5);
+}
+
+.btn.btn-background-circle:hover::before,
+.btn.btn-background-circle:focus::before {
+  transform: scale(0);
+}
+
+.btn.btn-background-circle:hover,
+.btn.btn-background-circle:focus {
+  color: white;
+}
+
+/* ==== Under Line Button ==== */
+.btn.btn-border-under-line {
+  z-index: 1;
+}
+.btn.btn-border-under-line::before {
+  content: "";
+
+  border: 2px solid var(--accent-color);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  transition: transform 200ms ease-in-out;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.btn.btn-border-under-line:hover:before,
+.btn.btn-border-under-line:focus:before {
+  transform: scaleX(1);
+}
